@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vendor Registration - Siddhi Infonet</title>
+  <link rel="stylesheet" href="body.css">
+  <style>
+    body { font-family: Arial, sans-serif; background:#fff6f6; margin:0; padding:0; }
+    .container { max-width: 700px; margin: 50px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    h1 { text-align:center; color:#ff6f61; margin-bottom: 25px; }
+    label { font-weight: bold; display: block; margin-top: 15px; }
+    input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-top: 8px; }
+    button { margin-top:20px; padding: 12px 20px; background:#ff6f61; border:none; color:#fff; font-weight:600; border-radius:8px; cursor:pointer; transition:0.3s; }
+    button:hover { background:#e35347; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Vendor Registration</h1>
+    <form action="/save/vendor">
+      <label>Company Name</label>
+      <input type="text" required>
+      <label>Contact Person</label>
+      <input type="text" required>
+      <label>Email</label>
+      <input type="email" required>
+      <label>Phone</label>
+      <input type="tel" required>
+      <label>Services Offered</label>
+      <textarea rows="4" required></textarea>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>

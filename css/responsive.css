@@ -1,0 +1,13 @@
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 40px; }
+}
+@media (max-width: 768px) {
+  .logo img { max-height: 72px; }
+  .main-nav { gap: 12px; }
+  .hero { height: 70vh; }
+  .hero h1 { font-size: 32px; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 26px; }
+  .hero p  { font-size: 16px; }
+}
