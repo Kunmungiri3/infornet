@@ -12,5 +12,7 @@ router.get('/save/vendor',(req,res)=>{
 router.get('/vendor-registration',(req,res)=>{
     res.render('vendor-portal')
 })
-
+router.post('/saveVendor',(req,res)=>{
+    vendorController.saveVendor(req,res);
+})
 module.exports=router;
