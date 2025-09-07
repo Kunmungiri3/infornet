@@ -1,17 +1,30 @@
-const Vendor = require('../models/vendor')
+const Vendor = require('../models/vendor');
+const bcrypt = require('bcrypt');
+
 async function saveVendor(req, res) {
     try {
-        let vendor = new Vendor(req.body)
-        let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
-        vendor.password = encryptedPassword
-        await vendor.save();
-        res.redirect('/');
-        console.log("data saved successfully...")
+        const { name, email, password } = req.body;
 
-    } catch(err) {
-         console.log(err);
+        if (!password) {
+            return res.status(400).send("Password is required");
+        }
+
+        const encryptedPassword = await bcrypt.hash(password, 10);
+
+        const vendor = new Vendor({
+            name,
+            email,
+            password: encryptedPassword
+        });
+
+        await vendor.save();
+        console.log("Data saved successfully...");
+        res.redirect('/');
+
+    } catch (err) {
+        console.error("Error saving vendor:", err);
+        res.status(500).send("Something went wrong");
     }
 }
-module.exports={
-    saveVendor,
-}
+
+module.exports = { saveVendor };

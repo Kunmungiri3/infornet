@@ -35,4 +35,5 @@ router.post("/saveJobseeker", upload.single("cv"), (req, res) => {
   jobseekerController.saveJobseeker(req, res);
 });
 
+
 module.exports = router;

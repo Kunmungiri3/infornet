@@ -17,17 +17,20 @@
 <body>
   <div class="container">
     <h1>Vendor Registration</h1>
-    <form action="/save/vendor">
+    <form action="/saveVendor">
       <label>Company Name</label>
-      <input type="text" required>
+      <input name="companyName" text="text" required>
       <label>Contact Person</label>
-      <input type="text" required>
+      <input name="contact" type="text" required>
       <label>Email</label>
-      <input type="email" required>
+      <input name="email" type="email" required>
+      <label>Password</label>
+      <input name="password" type="password" required>
       <label>Phone</label>
-      <input type="tel" required>
+      <input name="phone"type="tel" required>
       <label>Services Offered</label>
-      <textarea rows="4" required></textarea>
+
+      <textarea name="services" rows="4" required></textarea>
       <button type="submit">Register</button>
     </form>
   </div>
