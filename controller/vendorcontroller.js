@@ -3,19 +3,10 @@ const bcrypt = require('bcrypt');
 
 async function saveVendor(req, res) {
     try {
-        const { name, email, password } = req.body;
+        const encryptedPassword = await bcrypt.hash(req.param.password, 10);
 
-        if (!password) {
-            return res.status(400).send("Password is required");
-        }
-
-        const encryptedPassword = await bcrypt.hash(password, 10);
-
-        const vendor = new Vendor({
-            name,
-            email,
-            password: encryptedPassword
-        });
+       const vendor = new Vendor(req.body)
+        vendor.password=encryptedPassword;
 
         await vendor.save();
         console.log("Data saved successfully...");
@@ -27,4 +18,6 @@ async function saveVendor(req, res) {
     }
 }
 
-module.exports = { saveVendor };
+module.exports = { 
+    saveVendor 
+};

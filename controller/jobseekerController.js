@@ -1,5 +1,4 @@
 const Jobseeker = require('../models/jobseeker');
-// const Student = require('../models/Student')
 // const bcrypt = require('bcrypt');
 const cloudinary = require('cloudinary').v2
 let result;
